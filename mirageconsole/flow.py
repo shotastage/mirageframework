@@ -58,27 +58,3 @@ class Workflow():
                 flow.run()
             except:
                 raise Exception
-
-
-
-class Stepflow():
-    def __init__(self, parser):
-        self.inherite       = parser
-        self._action        = parser._cmd
-        self._subaction     = parser._sub_action
-        self._option        = parser._option
-        self._option_detail = parser._option_detail
-        self._values        = parser._values
-        self._flows         = []
-
-
-    def add(self, func) -> Void:
-        self._flows.append(func)
-
-    def run(self) -> Void:
-        for flow in self._flows:
-            try:
-                flow()
-            except:
-                mys.log("Something error has occured!", withError = True, errorDetail = mys.raise_error_message(flow))
-                raise Exception
