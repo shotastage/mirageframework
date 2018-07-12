@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Copyright 2017-2018 Shota Shimazu.
 
@@ -20,7 +19,42 @@ from mirage.core import Void
 from mirage import system as mys
 
 
+
 class Workflow():
+
+    def __init__(self, parser):
+        self.constructor()
+
+
+    def constructor(self) -> Void:
+        pass
+
+    def get_first_arg(self) -> str:
+        try:
+            return self._values[0]
+        except:
+            raise ValueError
+
+    def register(self, flow) -> Void:
+        self.Stepflows.append(flow)
+
+    def main(self) -> bool:
+        # Main flow struct
+        return True
+
+    def run(self) -> Void:
+        self.main()
+
+        # Flow
+        for flow in self.Stepflows:
+            try:
+                flow.run()
+            except:
+                raise Exception
+
+
+
+class AV_Workflow():
 
     def __init__(self, parser):
         self.inherite       = parser

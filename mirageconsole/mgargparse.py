@@ -20,17 +20,42 @@ import functools
 from mirage.core import Void
 from mirage import system
 
+from mirage.core import *
+from typing import List
+
+
+
 # Flow Classies
 from mirage import workflows
 
 
-class NewArgumentsParser(object):
+class CommandActionStore(object):
 
-    def __init__(self):
-        self._cmd = None
+    def __init__(self) -> None:
+        # Default action is below.
+        # mgc no-action:void test --detail [empty list]
+
+        self._command = "no-action"
+        self._subcommand = "void"
+        self._target_name = "test"
+        self._command_option = "--detail"
+        self._arguments = []
+
+        # Status
+        self.is_assessmented = False
 
 
 class ArgumentsParser(object):
+
+    def __init__(self) -> Void:
+        self._action_stack = []
+
+    
+    def add_argument(self, command: str, subcommand: str, target: str, detail: str, flow) -> Void:
+        pass
+
+
+class AVD_ArgumentsParser(object):
 
     def __init__(self):
 
