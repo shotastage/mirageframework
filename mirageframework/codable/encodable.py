@@ -16,7 +16,7 @@ from . import json_encorder_decoder
 
 
 class EncodableFormats(Enum):
-    json = 0
+    json = "JSON"
 
 
 
