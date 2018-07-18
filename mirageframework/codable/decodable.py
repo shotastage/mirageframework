@@ -10,13 +10,20 @@ This software is released under the Apache License, see LICENSE for detail.
 https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
+from typing import Callable, NoReturn
+
 class Decodable(object):
     
     def __init__(self):
+        self._decoder = self.decode
         self._value = None
 
     def decode(self):
         if self._value is None:
-            raise ValueError("Decoable data is empty!")
+            raise ValueError("Decodable data is empty!")
         else:
+            self._decoder()
             raise ValueError("Decode function havn't been overrided!")
+
+    def regist_decorder(self, f: Callable) -> NoReturn:
+        self._decoder = f

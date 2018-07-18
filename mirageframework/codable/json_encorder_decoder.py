@@ -11,14 +11,10 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
 import json
-from .encodable import Encodable
-from .decodable import Decodable
+from typing import ClassVar
 
 
-class JSONEncorderDecorder():
-    pass
-
-def encode(codable_instance: Encodable) -> Decodable:
+def encode(codable_instance: object) -> json:
     
     variables = codable_instance.__dict__.keys()
     values = codable_instance.__dict__.values()
@@ -31,5 +27,5 @@ def encode(codable_instance: Encodable) -> Decodable:
     return json.dumps(middle_dict)
 
 
-def decode(decodable_instance: Decodable) -> Encodable:
+def decode(data: json) -> (ClassVar, dict):
     pass

@@ -16,4 +16,4 @@ from .decodable import Decodable
 class Codable(Encodable, Decodable):
 
     def __init__(self):
-        print("Mirage Codable is now under construction.")
+        self._value = None
