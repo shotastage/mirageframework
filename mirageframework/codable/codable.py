@@ -13,7 +13,4 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 from .encodable import Encodable
 from .decodable import Decodable
 
-class Codable(Encodable, Decodable):
-
-    def __init__(self):
-        self._value = None
+class Codable(Encodable, Decodable): pass

@@ -11,27 +11,30 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
 from typing import Callable, NoReturn
+from enum import Enum
 from . import json_encorder_decoder
+
+
+class EncodableFormats(Enum):
+    json = 0
+
 
 
 class Encodable(object):
     
     def __init__(self):
-        self._encorder = self.encode
-        self._value = None
+        self._encorder: Callable = None
 
-        # Register default encorder
-        self.default_encorder()
 
-    def encode(self):
-        if self._value is None:
-            raise ValueError("Encodable data is empty!")
+    def encode(self, format: EncodableFormats) -> any:
+        
+        if self._encorder is None:
+            
+            if format is EncodableFormats.json:
+                return json_encorder_decoder.encode(self)
+
         else:
             self._encorder()
-            raise ValueError("Encode function havn't been overrided!")
 
     def regist_encorder(self, f: Callable) -> NoReturn:
         self._encorder = f
-
-    def default_encorder(self):
-        self.regist_encorder(json_encorder_decoder.encode(self))

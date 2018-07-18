@@ -16,14 +16,10 @@ class Decodable(object):
     
     def __init__(self):
         self._decoder = self.decode
-        self._value = None
 
     def decode(self):
-        if self._value is None:
-            raise ValueError("Decodable data is empty!")
-        else:
-            self._decoder()
-            raise ValueError("Decode function havn't been overrided!")
+        self._decoder()
+        raise ValueError("Decode function havn't been overrided!")
 
     def regist_decorder(self, f: Callable) -> NoReturn:
         self._decoder = f
