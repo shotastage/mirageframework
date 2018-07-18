@@ -13,4 +13,8 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 from .encodable import Encodable
 from .decodable import Decodable
 
-class Codable(Encodable, Decodable): pass
+
+class Codable(Encodable, Decodable):
+
+    def mapper(self):
+        pass
