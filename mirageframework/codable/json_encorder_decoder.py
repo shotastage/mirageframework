@@ -14,7 +14,7 @@ import json
 from .codable import Codable
 
 
-def decode(codable_instance: Codable) -> json:
+def encode(codable_instance: Codable) -> json:
     
     variables = codable_instance.__dict__.keys()
     values = codable_instance.__dict__.values()
@@ -27,5 +27,5 @@ def decode(codable_instance: Codable) -> json:
     return json.dumps(middle_dict)
 
 
-def encode(json: json):
+def decode(json: json):
     pass
