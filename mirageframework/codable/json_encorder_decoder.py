@@ -15,6 +15,9 @@ from .encodable import Encodable
 from .decodable import Decodable
 
 
+class JSONEncorderDecorder():
+    pass
+
 def encode(codable_instance: Encodable) -> Decodable:
     
     variables = codable_instance.__dict__.keys()

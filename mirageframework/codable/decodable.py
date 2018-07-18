@@ -13,4 +13,10 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 class Decodable(object):
     
     def __init__(self):
-        pass
+        self._value = None
+
+    def decode(self):
+        if self._value is None:
+            raise ValueError("Decoable data is empty!")
+        else:
+            raise ValueError("Decode function havn't been overrided!")

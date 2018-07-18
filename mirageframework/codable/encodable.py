@@ -10,7 +10,20 @@ This software is released under the Apache License, see LICENSE for detail.
 https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
+from typing import Callable, NoReturn
+
 class Encodable(object):
     
     def __init__(self):
-        pass
+        self._encorder = self.encode
+        self._value = None
+
+    def encode(self):
+        if self._value is None:
+            raise ValueError("Encodable data is empty!")
+        else:
+            self._encorder()
+            raise ValueError("Encode function havn't been overrided!")
+
+    def regist_encorder(self, f: Callable) -> NoReturn:
+        self._encorder = f
