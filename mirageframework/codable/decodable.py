@@ -1,6 +1,6 @@
 """
 Mirage Framework
-codable.py
+decodable.py
 
 Created by Shota Shimazu on 2018/07/18
 
@@ -10,10 +10,7 @@ This software is released under the Apache License, see LICENSE for detail.
 https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
-from .encodable import Encodable
-from .decodable import Decodable
-
-class Codable(Encodable, Decodable):
-
+class Decodable(object):
+    
     def __init__(self):
-        print("Mirage Codable is now under construction.")
+        pass

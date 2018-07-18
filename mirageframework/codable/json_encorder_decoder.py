@@ -11,10 +11,11 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
 import json
-from .codable import Codable
+from .encodable import Encodable
+from .decodable import Decodable
 
 
-def encode(codable_instance: Codable) -> json:
+def encode(codable_instance: Encodable) -> Decodable:
     
     variables = codable_instance.__dict__.keys()
     values = codable_instance.__dict__.values()
@@ -27,5 +28,5 @@ def encode(codable_instance: Codable) -> json:
     return json.dumps(middle_dict)
 
 
-def decode(json: json):
+def decode(decodable_instance: Decodable) -> Encodable:
     pass
