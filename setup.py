@@ -1,7 +1,7 @@
 # -*- encoding:utf-8 -*-
 
 from setuptools import setup, find_packages
-from mirage.version import __version__ as ver
+from mirageframework.version import __version__ as ver
 import sys
 
 

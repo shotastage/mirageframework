@@ -14,9 +14,8 @@ upload:
 
 clean:
 	@echo "Cleaning..."
-	rm -rf django_mirage.egg-info/
+	rm -rf mirage_framework.egg-info/
 	rm -rf dist/
-	rm -rf testing/
 
 pyclean:
 	find ./mirageconsole -name '*.pyc' -delete -not -path './mirage/scaffold/static/'
@@ -29,5 +28,5 @@ test:
 	@echo "Building Django Console..."
 	python setup.py check
 	python setup.py sdist
-	pip uninstall django-mirage
-	pip install dist/django-mirage-0.1.5.tar.gz
+	pip uninstall mirage-framework
+	pip install dist/mirage-framework-0.0.1.tar.gz
