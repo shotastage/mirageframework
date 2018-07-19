@@ -15,8 +15,8 @@ Copyright 2017-2018 Shota Shimazu.
 """
 
 from abc import ABCMeta, abstractmethod
-from mirage.core import Void
-from mirage import system as mys
+from mirageconsole.core import Void
+from mirageconsole import system as mys
 
 
 

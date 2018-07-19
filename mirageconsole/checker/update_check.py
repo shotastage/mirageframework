@@ -17,10 +17,10 @@ Copyright 2017-2018 Shota Shimazu.
 
 import tempfile, sys, traceback
 from urllib import request
-from mirage.proj import InDir
-from mirage.flow import Workflow
-from mirage.core import Void
-from mirage.version import __version__ as ver
+from mirageconsole.proj import InDir
+from mirageconsole.flow import Workflow
+from mirageconsole.core import Void
+from mirageconsole.version import __version__ as ver
 from mirage import system as mys
 
 
