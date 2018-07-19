@@ -1,12 +1,14 @@
-# -*- encoding:utf-8 -*-
+# -*- encoding: utf-8 -*-
 
 from setuptools import setup, find_packages
 from mirageframework.version import __version__ as ver
 import sys
 
 
-sys.path.append('./mirage')
+sys.path.append('./mirageframework')
+sys.path.append('./mirageconsole')
 sys.path.append('./tests')
+
 
 if __name__ == "__main__":
     setup(
@@ -22,17 +24,17 @@ if __name__ == "__main__":
         include_package_data = True,
         zip_safe = False,
         install_requires = [
-            # "Flask"
+            "Django"
         ],
         entry_points = {
             'console_scripts':[
                 'mgc = mirageconsole.mirage:main',
             ],
         },
-        description = "Advanced Django Console",
+        description = "Extended Django framework",
         long_description = "Advanced extended command line tool for Django.",
         url = "https://github.com/shotastage/mirageframework",
         license = "Apache",
         platforms = ["POSIX", "Windows", "Mac OS X"],
-        # test_suite = "mirage_test.suite",
+        # test_suite = "mirageframework_test.suite",
     )
