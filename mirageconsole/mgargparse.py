@@ -17,204 +17,65 @@ Copyright 2017-2018 Shota Shimazu.
 import sys
 import enum
 import functools
-from mirage.core import Void
-from mirage import system
 
-from mirage.core import *
 from typing import List
-
-
-
-# Flow Classies
-from mirage import workflows
+from mirageconsole import system
+from mirageconsole.core import *
 
 
 class CommandActionStore(object):
 
-    def __init__(self) -> None:
+    def __init__(self, cmd: str, subcmd: str, target: str, option: str, flow: callable) -> Void:
         # Default action is below.
         # mgc no-action:void test --detail [empty list]
 
-        self._command = "no-action"
-        self._subcommand = "void"
-        self._target_name = "test"
-        self._command_option = "--detail"
-        self._arguments = []
+        self._command = cmd
+        self._subcommand = subcmd
+        self._target_name = target
+        self._command_option = option
+        self._flow = flow
 
         # Status
         self.is_assessmented = False
 
 
+
 class ArgumentsParser(object):
 
     def __init__(self) -> Void:
-        self._action_stack = []
+        self._action_stack: List[CommandActionStore] = []
+        self._arguments: List[str] = []
+
+        self._command = self._command_parser(sys.argv[1])
+        self._subcommand = self._subcommand_parser(sys.argv[1])
+        self._target_name = sys.argv[2]
+        self._command_option = sys.argv[3]
 
     
     def add_argument(self, command: str, subcommand: str, target: str, detail: str, flow) -> Void:
-        pass
-
-
-class AVD_ArgumentsParser(object):
-
-    def __init__(self):
-
-        # Arguments
-        self._cmd = None            # ex. **new**
-        self._sub_action = None     # ex. new:**cms**
-        self._option = None         # ex. g **app**
-        self._option_detail = None  # ex. g app **--basic**
-        self._values = None         # ex. g **app api mail user**
-        self.__insert_arguments()   # <== Insert real value
-
-        # Exec flow
-        self._exec_flow = None
-
-        # Arguments Array
-        self._arguments = (
-            self._cmd,
-            self._sub_action,
-            self._option,
-            self._option_detail,
-            self._values
+        self._action_stack.append(
+            CommandActionStore(
+                cmd = command,
+                subcmd = subcommand,
+                target = target,
+                option = detail,
+                flow = flow
+            )
         )
-
-        # Is Assessmented
-        self._assessmented = False
-
-
-
-    def add_argument(self, shorten_cmd: str, long_cmd: str, option: str, execute: str) -> Void:
-
-        if self._assessmented: return
-
-        # Check command
-
-        if not self._cmd == shorten_cmd and not self._cmd == long_cmd:
-            return
-
-        if not self._sub_action is None:
-            return
-
-        if not option is None:
-            if self._option == option:
-                self._exec_flow = execute
-                self._assessmented = True
-        else:
-            self._exec_flow = execute
-            self._assessmented = True
-
-        return
-
-
-    def add_argument_with_subaction(self, base_shorten_cmd: str,
-                                    base_long_cmd: str, action: str, option: str, execute: str) -> Void:
-
-        if self._assessmented: return
-
-        if not self._cmd == base_shorten_cmd and not self._cmd == base_long_cmd:
-            return
-
-        if not self._sub_action == action:
-            return
-
-        if not option is None:
-            if self._option == option:
-                self._exec_flow = execute
-                self._assessmented = True
-        else:
-            self._exec_flow = execute
-            self._assessmented = True
-
-
-        return
 
 
     def parse(self) -> Void:
-        # If there are no command, show usage.
-        if len(sys.argv) == 1:
-            instance = getattr(workflows, "UsageShow")(self._arguments)
-            instance.run()
-            return
+        pass
 
-        # Check excute function is not empty.
-        if not self._exec_flow == None:
-            instance = getattr(workflows, self._exec_flow)(self._arguments)
-            instance.run()
-            return
-
+    def _command_parser(self, cmd: str) -> str:
+        
+        if ":" in cmd:
+            return cmd.split(":")[0]
         else:
-            system.log("Unable to invoke action \"{0}\"!".format(sys.argv[1]), withError = True)
-            instance = getattr(workflows, "UsageShow")(self._arguments)
-            instance.run()
-
-
-    def __insert_arguments(self):
-        # Get main command **new**:cms
-        try: self._cmd = self.__colon_separate_cmd(sys.argv[1])
-        except: pass
-
-        # Get subaction new:**cms**
-        try: self._sub_action = self.__colon_separate_action(sys.argv[1])
-        except: pass
-
-        # Get option and detail option
-        # optin =           mi g **app**
-        # detail option =   mi g app **--basic**
-        try:
-            self._option = sys.argv[2]
-
-            if "--" in sys.argv[3]:
-                self._option_detail = sys.argv[3]
-        except: pass
-
-        # Get values
-        try:
-            if "--" in sys.argv[3]:
-                self._values = sys.argv[4:]
-            else:
-                self._values = sys.argv[3:]
-        except: pass
-
-
-    def __colon_separate_cmd(self, cmd_colon_value: str) -> str:
-        if ":" in cmd_colon_value:
-            return cmd_colon_value.split(":")[0]
+            return cmd
+    
+    def _subcommand_parser(self, cmd: str) -> str:
+        if ":" in cmd:
+            return cmd.split(":")[1]
         else:
-            return cmd_colon_value
-
-
-    def __colon_separate_action(self, cmd_colon_value: str) -> str:
-        if ":" in cmd_colon_value:
-            return cmd_colon_value.split(":")[1]
-        else:
-            raise ValueError
-
-
-
-class DetailOptionParser():
-
-    def __init__(self, detail_option):
-        self._option_detail = detail_option
-        self._excute = None
-
-    def add_argument(self, option, excute):
-        if self._option_detail == option:
-            self._excute = excute
-
-    def parse(self):
-        self._excute.excute()
-
-
-
-def reserve_as_command(*reserved_args):
-
-    def _decorator(func):
-        @functools.wraps(func)
-        def wrapper(*args, **kwargs):
-            for reserve in reserved_args:
-                if args[1] == reserve:
-                    re = func(*args, **kwargs)
-                    return re
-        return wrapper
-    return _decorator
+            return ""
