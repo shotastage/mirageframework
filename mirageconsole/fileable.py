@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Copyright 2017-2018 Shota Shimazu.
 
@@ -29,7 +28,6 @@ def copy(from_path, to_path, force = False):
             shutil.rmtree(to_path)
         else:
             raise FileExistsError
-            return
     
     shutil.copytree(from_path, to_path)
 
