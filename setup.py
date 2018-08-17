@@ -6,6 +6,7 @@ import sys
 
 
 sys.path.append('./mirageframework')
+sys.path.append('./miragecore')
 sys.path.append('./mirageconsole')
 sys.path.append('./tests')
 

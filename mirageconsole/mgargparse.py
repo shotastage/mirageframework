@@ -67,14 +67,17 @@ class ArgumentsParser(object):
     def parse(self) -> Void:
         pass
 
+
     def _command_parser(self, cmd: str) -> str:
-        
+
         if ":" in cmd:
             return cmd.split(":")[0]
         else:
             return cmd
+
     
     def _subcommand_parser(self, cmd: str) -> str:
+
         if ":" in cmd:
             return cmd.split(":")[1]
         else:
