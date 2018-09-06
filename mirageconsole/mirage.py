@@ -1,5 +1,5 @@
 """
-Mirage Console
+MIRAGE Console
 mirage.py
 
 Created by Shota Shimazu on 2018/06/05
