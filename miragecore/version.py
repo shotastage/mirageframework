@@ -1,5 +1,5 @@
 """
-Mirage Framework
+MIRAGE Framework
 version.py
 
 Created by Shota Shimazu on 2018/06/05

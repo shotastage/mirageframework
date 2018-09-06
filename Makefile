@@ -30,3 +30,6 @@ test:
 	python setup.py sdist
 	pip uninstall mirage-framework
 	pip install dist/mirage-framework-0.0.1.tar.gz
+
+export-requirements:
+	pipenv lock -r >> requirements.txt
