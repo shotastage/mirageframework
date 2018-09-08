@@ -15,7 +15,7 @@ Copyright 2017-2018 Shota Shimazu.
    limitations under the License.
 """
 
-from mirage import version
+from mirageconsole import version
 
 def usage_doc():
     return """

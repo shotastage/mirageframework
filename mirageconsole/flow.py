@@ -22,21 +22,8 @@ from mirageconsole import system as mys
 
 class Workflow():
 
-    def __init__(self, parser):
-        self.constructor()
-
-
-    def constructor(self) -> Void:
-        pass
-
-    def get_first_arg(self) -> str:
-        try:
-            return self._values[0]
-        except:
-            raise ValueError
-
-    def register(self, flow) -> Void:
-        self.Stepflows.append(flow)
+    def __init__(self, parser) -> Void:
+        self.init()
 
     def main(self) -> bool:
         # Main flow struct
@@ -53,42 +40,12 @@ class Workflow():
                 raise Exception
 
 
+class Action():
 
-class AV_Workflow():
+    def __init__(self, where) -> Void:
+        
+        if where:
+            self.script()
+    
 
-    def __init__(self, parser):
-        self.inherite       = parser
-        self._action        = self.inherite[0]
-        self._subaction     = self.inherite[1]
-        self._option        = self.inherite[2]
-        self._option_detail = self.inherite[3]
-        self._values        = self.inherite[4]
-        self.Stepflows      = []
-        self.constructor()
-
-
-    def constructor(self) -> Void:
-        pass
-
-    def get_first_arg(self) -> str:
-        try:
-            return self._values[0]
-        except:
-            raise ValueError
-
-    def register(self, flow) -> Void:
-        self.Stepflows.append(flow)
-
-    def main(self) -> bool:
-        # Main flow struct
-        return True
-
-    def run(self) -> Void:
-        self.main()
-
-        # Flow
-        for flow in self.Stepflows:
-            try:
-                flow.run()
-            except:
-                raise Exception
+    def script(self): pass

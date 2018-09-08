@@ -14,25 +14,30 @@ Copyright 2017-2018 Shota Shimazu.
    limitations under the License.
 """
 
+import warnings
+
 import sys
 import enum
 import functools
-from mirage.core import Void
-from mirage import system
+from mirageconsole.core import Void
+from mirageconsole import system
 
 # Flow Classies
-from mirage import workflows
+from mirageconsole import workflows
 
 
 class NewArgumentsParser(object):
 
     def __init__(self):
+        warnings.warn("NewArgumentsParser will be deprecated.", DeprecationWarning)
         self._cmd = None
 
 
 class ArgumentsParser(object):
 
     def __init__(self):
+
+        warnings.warn("ArgumentsParser will be deprecated.", DeprecationWarning)
 
         # Arguments
         self._cmd = None            # ex. **new**
@@ -169,7 +174,10 @@ class ArgumentsParser(object):
 
 class DetailOptionParser():
 
+    warnings.warn("DetailOptionParser will be deprecated.", DeprecationWarning)
+
     def __init__(self, detail_option):
+        
         self._option_detail = detail_option
         self._excute = None
 

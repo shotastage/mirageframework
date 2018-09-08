@@ -15,9 +15,9 @@ Copyright 2017-2018 Shota Shimazu.
    limitations under the License.
 """
 
-from mirage.core import Void
-from mirage.flow import Workflow
-from mirage.help import description, description_long
+from mirageconsole.core import Void
+from mirageconsole.flow import Workflow
+from mirageconsole.help import description, description_long
 
 class UsageShowWorkFlow(Workflow):
 

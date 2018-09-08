@@ -12,7 +12,7 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 
 import sys
 
-from mirage.djargparse import ArgumentsParser
+from mirageconsole.djargparse import ArgumentsParser
 
 
 
