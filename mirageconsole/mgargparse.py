@@ -21,9 +21,10 @@ from mirageconsole.core import *
 
 class CommandActionStore(object):
 
-    def __init__(self, cmd: str, subcmd: str, target: str, option: str, flow: callable) -> Void:
+    def __init__(self, cmd: str, subcmd: str, target: str, option: str, flow: callable = None) -> Void:
         # Default action is below.
         # mgc no-action:void test --detail [empty list]
+        # ex. mgc new:react proj_name --typescript
 
         self._command = cmd
         self._subcommand = subcmd
@@ -42,10 +43,12 @@ class ArgumentsParser(object):
         self._action_stack: List[CommandActionStore] = []
         self._arguments: List[str] = []
 
-        self._command = self._command_parser(sys.argv[1])
-        self._subcommand = self._subcommand_parser(sys.argv[1])
-        self._target_name = sys.argv[2]
-        self._command_option = sys.argv[3]
+        self._given_action = CommandActionStore(
+            cmd = self._command_parser(sys.argv[1]),
+            subcmd = self._subcommand_parser(sys.argv[1]),
+            target = sys.argv[2],
+            option = sys.argv[3]
+        )
 
     
     def add_argument(self, command: str, subcommand: str, target: str, detail: str, flow) -> Void:
@@ -61,7 +64,14 @@ class ArgumentsParser(object):
 
 
     def parse(self) -> Void:
-        pass
+
+        for action in self._action_stack:
+            if self._given_action == action:
+                action._flow()
+                return
+        
+        print("Your command is not found.")
+
 
 
     def _command_parser(self, cmd: str) -> str:
@@ -78,3 +88,6 @@ class ArgumentsParser(object):
             return cmd.split(":")[1]
         else:
             return ""
+
+    def _parse_detail_option(self, option: str) -> str:
+        return ""
