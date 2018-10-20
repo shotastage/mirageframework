@@ -18,17 +18,18 @@ Copyright 2017-2018 Shota Shimazu.
 from mirageconsole.core import Void
 from mirageconsole.flow import Workflow
 from mirageconsole.help import description, description_long
+from mirageconsole import version
+
 
 class UsageShowWorkFlow(Workflow):
 
-    def main(self) -> Void:
-        if self._option == "--detail":
-            print(description_long.usage_doc())
-        else:
-            print(description.usage_doc())
+    def workflow_running(self):
+        super().workflow_running()
+
 
 
 class VersionShowWorkFlow(Workflow):
 
-    def main(self) -> Void:
-        print(description.version_doc())
+    def workflow_running(self):
+        super().workflow_running()
+        print(version.__version__)

@@ -12,17 +12,17 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 
 import sys
 
-from mirageconsole.djargparse import ArgumentsParser
-
-
+from mirageconsole.mgargparse import CommandActionStore, ArgumentsParser
+from mirageconsole.help.flow import VersionShowWorkFlow
 
 def main():
 
     parser = ArgumentsParser()
 
     # Usage & Version
-    parser.add_argument("h", "help", None, "UsageShow")
-    parser.add_argument("v", "version", None, "VersionShow")
+    # parser.add_argument("h", "help", None, "UsageShow")
+    # parser.add_argument("v", "version", None, "VersionShow")
+    parser.add_argument("v", None, None, None, VersionShowWorkFlow)
 
     # Commands
     # parser.add_argument("new", "newproject", None, "ReactStartup")
@@ -65,7 +65,7 @@ def main():
     # parser.add_argument("+", "confscript", None, "MirageConfigScriptFlow")
 
     # parser.add_argument("?", "inquiry", "update", "UpdateCheckFlow")
-    parser.add_argument("?", "inquiry", "system", "SystemCheckFlow")
+    # parser.add_argument("?", "inquiry", "system", "SystemCheckFlow")
 
     # Excute
     parser.parse()

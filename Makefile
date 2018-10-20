@@ -22,10 +22,10 @@ pyclean:
 	find ./mirageframework -name '*.pyc' -delete -not -path './mirage/scaffold/static/'
 
 
-test:
+rebuild:
 	@echo "Removing recent buildings..."
 	rm -rf dist/
-	@echo "Building Django Console..."
+	@echo "Building MIRAGE Framework..."
 	python setup.py check
 	python setup.py sdist
 	pip uninstall mirage-framework
