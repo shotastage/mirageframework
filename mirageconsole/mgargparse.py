@@ -15,7 +15,7 @@ import enum
 import functools
 
 from typing import List
-from mirageconsole.core import *
+from miragecore.core.types import *
 
 
 class CommandActionStore(object):
