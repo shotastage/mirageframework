@@ -5,10 +5,12 @@ name = "pypi"
 
 [packages]
 django = "*"
+wheel = "*"
 
 [dev-packages]
 pylint = "*"
 "pep8" = "*"
+twine = "*"
 
 [requires]
 python_version = "3.7"
