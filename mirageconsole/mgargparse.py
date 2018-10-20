@@ -32,9 +32,6 @@ class CommandActionStore(object):
         self._command_option = option
         self._flow = flow
 
-        # Status
-        self.is_assessmented = False
-
 
 
 class ArgumentsParser(object):
