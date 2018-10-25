@@ -21,13 +21,13 @@ import sys
 import time
 import distutils
 
-from mirage import system as mys
-from mirage import proj
+from mirageconsole import system as mys
+from mirageconsole import proj
 
-from mirage              import project
-from mirage              import fileable
-from mirage.flow         import Workflow
-from mirage.database     import DBConnection
+from mirageconsole       import project
+from mirageconsole       import fileable
+from mirageconsole.flow  import Workflow
+from mirageconsole.database     import DBConnection
 
 from mirage.workspace import storage
 
