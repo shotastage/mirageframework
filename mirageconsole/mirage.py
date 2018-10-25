@@ -23,6 +23,8 @@ def main():
     # parser.add_argument("h", "help", None, "UsageShow")
     # parser.add_argument("v", "version", None, "VersionShow")
     parser.add_argument("v", None, None, None, VersionShowWorkFlow)
+    parser.add_argument("version", None, None, None, VersionShowWorkFlow)
+
 
     # Commands
     # parser.add_argument("new", "newproject", None, "ReactStartup")

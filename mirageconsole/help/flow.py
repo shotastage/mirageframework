@@ -15,7 +15,7 @@ Copyright 2017-2018 Shota Shimazu.
    limitations under the License.
 """
 
-from mirageconsole.core import Void
+from miragecore import core
 from mirageconsole.flow import Workflow
 from mirageconsole.help import description, description_long
 from mirageconsole import version

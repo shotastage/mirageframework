@@ -11,7 +11,7 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
 from abc import ABCMeta, abstractmethod
-from mirageconsole.core import Void
+from miragecore.core import *
 
 
 class Workflow():

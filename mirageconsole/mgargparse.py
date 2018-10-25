@@ -57,6 +57,8 @@ class ArgumentsParser(object):
         for action in self._action_stack:
             if self._given_action == action:
                 action._flow()
+                print("Action has been executed.")
+
                 return
         
         print("Your command is not found.")
