@@ -12,8 +12,8 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 
 import sys
 
-from mirageconsole.mgargparse import CommandActionStore, ArgumentsParser
-from mirageconsole.help.flow import VersionShowWorkFlow
+from console.mgargparse import CommandActionStore, ArgumentsParser
+from console.help.flow import VersionShowWorkFlow
 
 def main():
 

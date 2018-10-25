@@ -21,15 +21,15 @@ import sys
 import time
 import distutils
 
-from mirageconsole import system as mys
-from mirageconsole import proj
+from console import system as mys
+from console import proj
 
-from mirageconsole       import project
-from mirageconsole       import fileable
-from mirageconsole.flow  import Workflow
-from mirageconsole.database     import DBConnection
+from console       import project
+from console       import fileable
+from console.flow  import Workflow
+from console.database     import DBConnection
 
-from mirage.workspace import storage
+from mirageconosle.workspace import storage
 
 class DjangoBackupAppWorkFlow(Workflow):
 

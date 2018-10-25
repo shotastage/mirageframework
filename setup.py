@@ -7,7 +7,7 @@ import sys
 
 sys.path.append('./mirageframework')
 sys.path.append('./miragecore')
-sys.path.append('./mirageconsole')
+sys.path.append('./console')
 sys.path.append('./tests')
 
 
@@ -29,7 +29,7 @@ if __name__ == "__main__":
         ],
         entry_points = {
             'console_scripts':[
-                'mgc = mirageconsole.mirage:main',
+                'mgc = console.mirage:main',
             ],
         },
         description = "Extended Django framework",

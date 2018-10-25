@@ -19,11 +19,11 @@ import platform
 import tempfile, sys, traceback
 from functools import lru_cache
 from urllib import request
-from mirageconsole.proj import InDir
-from mirageconsole.flow import Workflow
+from console.proj import InDir
+from console.flow import Workflow
 from miragecore.core.types import *
-from mirageconsole.version import __version__ as ver
-from mirageconsole import system as mys
+from console.version import __version__ as ver
+from console import system as mys
 
 
 

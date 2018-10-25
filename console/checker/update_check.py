@@ -17,10 +17,10 @@ Copyright 2017-2018 Shota Shimazu.
 
 import tempfile, sys, traceback
 from urllib import request
-from mirageconsole.proj import InDir
-from mirageconsole.flow import Workflow
-from mirageconsole.core import Void
-from mirageconsole.version import __version__ as ver
+from console.proj import InDir
+from console.flow import Workflow
+from console.core import Void
+from console.version import __version__ as ver
 from mirage import system as mys
 
 
@@ -28,7 +28,7 @@ from mirage import system as mys
 class UpdateCheckFlow(Workflow):
 
     def constructor(self) -> Void:
-        self._url = "https://raw.githubusercontent.com/shotastage/mirageframework/master/mirageconsole/version.py"
+        self._url = "https://raw.githubusercontent.com/shotastage/mirageframework/master/console/version.py"
 
 
     def main(self) -> Void:

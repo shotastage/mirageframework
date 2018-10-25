@@ -16,9 +16,9 @@ Copyright 2017-2018 Shota Shimazu.
 """
 
 from miragecore import core
-from mirageconsole.flow import Workflow
-from mirageconsole.help import description, description_long
-from mirageconsole import version
+from console.flow import Workflow
+from console.help import description, description_long
+from console import version
 
 
 class UsageShowWorkFlow(Workflow):

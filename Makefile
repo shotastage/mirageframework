@@ -18,7 +18,7 @@ clean:
 	rm -rf dist/
 
 pyclean:
-	find ./mirageconsole -name '*.pyc' -delete -not -path './mirage/scaffold/static/'
+	find ./console -name '*.pyc' -delete -not -path './mirage/scaffold/static/'
 	find ./mirageframework -name '*.pyc' -delete -not -path './mirage/scaffold/static/'
 
 
