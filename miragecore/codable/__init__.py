@@ -11,6 +11,6 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
 from . import json_encorder_decoder
-from . import codable
+from .codable import *
 from . import encodable
 from . import decodable

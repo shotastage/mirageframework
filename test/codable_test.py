@@ -1,6 +1,9 @@
-from mirageframework.codable.encodable import Encodable, EncodableFormats
+import unittest
+from miragecore.codable import Codable
+from miragecore.codable.json_encorder_decoder import encode
 
-class EncodeJSONTest(Encodable):
+
+class EncodeJSONTest(Codable):
 
     user_name = "shotastage"
     email = "hornet.live.mf@gmail.com"
@@ -9,4 +12,6 @@ class EncodeJSONTest(Encodable):
 
 
 instance = EncodeJSONTest()
-print(instance.encode(EncodableFormats.json))
+
+if __name__ == "__main__":
+    print(encode(instance))

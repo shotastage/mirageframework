@@ -1,5 +1,5 @@
 """
-Mirage Framework
+MIRAGE Framework
 json_encorder_decorder.py
 
 Created by Shota Shimazu on 2018/06/05
