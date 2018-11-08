@@ -1,4 +1,4 @@
-# MIRAGE Framework
+![MIRAGE Framework](./docs/assets/logo.png)
 
 [![Python 3](https://pyup.io/repos/github/shotastage/mirageframework/python-3-shield.svg)](https://pyup.io/repos/github/shotastage/mirageframework/)
 [![Updates](https://pyup.io/repos/github/shotastage/mirageframework/shield.svg)](https://pyup.io/repos/github/shotastage/mirageframework/)
