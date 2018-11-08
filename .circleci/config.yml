@@ -49,7 +49,7 @@ jobs:
           command: |
             . venv/bin/activate
             python setup.py check
-	          python setup.py sdist
+            python setup.py sdist
 
       - store_artifacts:
           path: test-reports
