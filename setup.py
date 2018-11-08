@@ -13,7 +13,7 @@ sys.path.append('./tests')
 
 if __name__ == "__main__":
     setup(
-        name = "mirage-framework",
+        name = "mirageframework",
         version = ver,
         author = "Shota Shimazu",
         author_email = "hornet.live.mf@gmail.com",
