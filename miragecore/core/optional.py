@@ -11,9 +11,12 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
 class Optional():
-    
+
     def __init__(self, value: any):
         self._value: any = value
+
+    def type_name(self) -> str:
+        return type(self._value).__name__
 
     def unwrap(self) -> any:
         
@@ -29,5 +32,13 @@ class Optional():
         else:
             raise ValueError("This value contains None.\n Thus, unwrapping optional value has been failed.")
 
-    def type_name(self) -> str:
-        return type(self._value).__name__
+
+class OptionalF(Optional):
+
+    # TODO: Implement force optional class
+
+    def __new__(cls):
+        pass
+
+    def __init__(self, value):
+        super().__init__(value)
