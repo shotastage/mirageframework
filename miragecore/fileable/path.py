@@ -2,5 +2,13 @@ import os, sys
 
 class Path():
 
-    def __init__(self, path: str):
-        self._path = path
+    # Path
+    path: str
+
+
+    def __init__(self, path: str = None):
+
+        if path is not None:
+            self.path = os.environ['HOME']
+        else:
+            self.path = path
