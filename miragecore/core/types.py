@@ -11,8 +11,12 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
 from typing import NoReturn
+from django.http import HttpRequest, HttpResponse
 
 Void = NoReturn
 String = str
 Int = int
 Float = float
+
+Request = HttpRequest
+Response = HttpResponse
