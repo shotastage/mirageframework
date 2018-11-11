@@ -18,11 +18,10 @@ class CURDView(APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
 
-    def post(self, request, format = None) -> Response:
+    def post(self, request, serializer: callable) -> Response:
         """
         Return a status message.
         """
-        serializer: callable
 
         if serializer.is_valid():
             serializer.save()
