@@ -11,7 +11,7 @@ def CREATE(request: HttpRequest, serializer_class: callable) -> Response:
         Return a status message.
         """
 
-        serializer = getattr(serializer_class, "SELIALIZER_CLASS")(request.data)
+        serializer = getattr(serializer_class)(request.data)
 
         if serializer.is_valid():
             serializer.save()
