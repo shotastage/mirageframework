@@ -6,6 +6,18 @@ from django.contrib.auth.models import User
 from miragecore.core.types import *
 
 
+def CREATE(request: HttpRequest, serializer_class: callable) -> Response:
+        """
+        Return a status message.
+        """
+
+        serializer = getattr(serializer_class, "SELIALIZER_CLASS", default=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class CURDView(APIView):
     """
@@ -17,16 +29,3 @@ class CURDView(APIView):
 
     authentication_classes = (authentication.TokenAuthentication,)
     permission_classes = (permissions.IsAuthenticated,)
-     
-    @staticmethod
-    def CREATE(request: HttpRequest, serializer_class: callable) -> Response:
-        """
-        Return a status message.
-        """
-        serializer = serializer_class(request.data)
-
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
