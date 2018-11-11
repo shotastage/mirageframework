@@ -3,6 +3,7 @@ from rest_framework import authentication, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.contrib.auth.models import User
+from miragecore.core.types import *
 
 
 
@@ -17,11 +18,12 @@ class CURDView(APIView):
     authentication_classes = (authentication.TokenAuthentication,)
     permission_classes = (permissions.IsAuthenticated,)
      
-
-    def CREATE(self, serializer: callable) -> Response:
+    @staticmethod
+    def CREATE(request: HttpRequest, serializer_class: callable) -> Response:
         """
         Return a status message.
         """
+        serializer = serializer_class(request.data)
 
         if serializer.is_valid():
             serializer.save()
