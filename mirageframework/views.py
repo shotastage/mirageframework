@@ -16,9 +16,9 @@ class CURDView(APIView):
 
     authentication_classes = (authentication.TokenAuthentication,)
     permission_classes = (permissions.IsAuthenticated,)
+     
 
-
-    def post(self, request, serializer: callable) -> Response:
+    def CREATE(self, serializer: callable) -> Response:
         """
         Return a status message.
         """
