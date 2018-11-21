@@ -68,5 +68,5 @@ def main():
     # parser.add_argument("?", "inquiry", "update", "UpdateCheckFlow")
     # parser.add_argument("?", "inquiry", "system", "SystemCheckFlow")
 
-    # Excute
+    # Execute
     parser.parse()

@@ -10,6 +10,16 @@ This software is released under the Apache License, see LICENSE for detail.
 https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
+import sys
+import inspect
+from typing import List
 
 class AppCollector():
-    pass
+    
+    modules: List[str]
+
+    def __init__(self):
+        self.modules = self._collect_module()
+
+    def _collect_module(self):
+        return sys.modules[__name__]
