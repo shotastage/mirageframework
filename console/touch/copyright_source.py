@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Copyright 2017-2018 Shota Shimazu.
 
@@ -21,7 +20,7 @@ from functools import lru_cache
 
 
 @lru_cache(maxsize = 10)
-def copyright_script_style_doc(proj_name, fname, your_name, start, copyrightors, license, license_url) -> str:
+def copyright_script_style_doc(proj_name, f_name, your_name, start, copyrightors, license, license_url) -> str:
     return textwrap.dedent('''
 """
 {PROJECT_NAME}
@@ -34,13 +33,13 @@ This software is released under the terms of {LICENSE_NAME}, see LICENSE for det
 {LICENSE_URL}
 """
 
-# Import Library
+# Import Libraries
 
 # Code Here
 
     ''').format(
         PROJECT_NAME = proj_name,
-        FILE_NAME = fname,
+        FILE_NAME = f_name,
         YOUR_NAME = your_name,
         START_YEAR = start,
         CURRENT = get_current(),
@@ -52,7 +51,7 @@ This software is released under the terms of {LICENSE_NAME}, see LICENSE for det
 
 
 @lru_cache(maxsize = 10)
-def copyright_c_style_doc(proj_name, fname, your_name, start, copyrightors, license, license_url) -> str:
+def copyright_c_style_doc(proj_name, f_name, your_name, start, copyrightors, license, license_url) -> str:
     return textwrap.dedent('''
 /*
 {PROJECT_NAME}
@@ -65,11 +64,13 @@ This software is released under the terms of {LICENSE_NAME}, see LICENSE for det
 {LICENSE_URL}
 */
 
+// Import Libraries
+
 // Code Here
 
     ''').format(
         PROJECT_NAME = proj_name,
-        FILE_NAME = fname,
+        FILE_NAME = f_name,
         YOUR_NAME = your_name,
         START_YEAR = start,
         CURRENT = get_current(),
