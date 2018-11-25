@@ -11,6 +11,10 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
 
-def module(name: str, class_name: str) -> str:
+def obj(name: str, class_name: callable) -> str:
+    return "have.to.import.module"
+
+
+def module(name: str, module_name: str) -> str:
 
     return "have.to.import.module"
