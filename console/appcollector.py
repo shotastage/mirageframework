@@ -14,12 +14,6 @@ import sys
 import inspect
 from typing import List
 
-class AppCollector():
-    
+
+def collect(module: str):
     modules: List[str]
-
-    def __init__(self):
-        self.modules = self._collect_module()
-
-    def _collect_module(self):
-        return sys.modules[__name__]
