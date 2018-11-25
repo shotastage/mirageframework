@@ -24,8 +24,8 @@ def log(string,
         print('\033[31mMIRAGE: ' + str(string) + '\033[0m')
 
         if not errorDetail == None:
-            separator_begin = "===== Error Detail =======================================================\n"
-            separator_end   = "==========================================================================\n"
+            separator_begin = "===== Error Detail =========================================================\n"
+            separator_end   = "============================================================================\n"
             print('\033[31m' + separator_begin + errorDetail + "\n" + separator_end + '\033[0m')
 
 
