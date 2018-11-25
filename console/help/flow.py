@@ -10,7 +10,13 @@ This software is released under the Apache License, see LICENSE for detail.
 https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
+from console.framework.flow import module
+from console.help.procedures import (
+    UsageShowProcedure,
+    VersionShowProcedure
+)
 
 flows = (
-    'help',
+    module('usage', UsageShowProcedure),
+    module('version', VersionShowProcedure),
 )
