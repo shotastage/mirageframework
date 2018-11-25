@@ -1,8 +1,8 @@
 """
 MIRAGE Console
-flow.py
+procedure.py
 
-Created by Shota Shimazu on 2018/10/20
+Created by Shota Shimazu on 2018/11/25
 
 Copyright (c) 2018 Shota Shimazu All Rights Reserved.
 
