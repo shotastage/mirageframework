@@ -10,10 +10,17 @@ This software is released under the Apache License, see LICENSE for detail.
 https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
+import os, sys
+import importlib
+from typing import List
+
 
 def obj(name: str, class_name: callable) -> str:
     return "have.to.import.module"
 
 
-def module(module_name: str) -> str:
-    return "have.to.import.module"
+def module(module_name: str) -> List[str]:
+
+    new = importlib.import_module(module_name)
+
+    return new.flow.flows
