@@ -1,35 +1,16 @@
-# -*- coding: utf-8 -*-
 """
-Copyright 2017-2018 Shota Shimazu.
+MIRAGE Console
+flow.py
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+Created by Shota Shimazu on 2018/11/25
 
-       http://www.apache.org/licenses/LICENSE-2.0
+Copyright (c) 2018 Shota Shimazu All Rights Reserved.
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+This software is released under the Apache License, see LICENSE for detail.
+https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
-from miragecore import core
-from console.flow import Workflow
-from console.help import description, description_long
-from console import version
 
-
-class UsageShowWorkFlow(Workflow):
-
-    def workflow_running(self):
-        super().workflow_running()
-
-
-
-class VersionShowWorkFlow(Workflow):
-
-    def workflow_running(self):
-        super().workflow_running()
-        print(version.__version__)
+flows = (
+    'help',
+)
