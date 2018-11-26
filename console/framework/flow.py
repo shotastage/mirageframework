@@ -16,10 +16,14 @@ from typing import List
 
 
 def obj(name: str, class_name: callable) -> str:
-    return "have.to.import.module"
+
+    if name == "":
+        pass
+
+    return callable
 
 
-def module(module_name: str) -> List[str]:
+def module(module_name: str) -> List[callable]:
 
     new = importlib.import_module(module_name)
 
