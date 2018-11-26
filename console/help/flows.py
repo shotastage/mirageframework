@@ -17,6 +17,6 @@ from console.help.procedures import (
 )
 
 flows = (
-    obj('usage', UsageShowProcedure),
-    obj('version', VersionShowProcedure),
+    obj(UsageShowProcedure),
+    obj(VersionShowProcedure),
 )

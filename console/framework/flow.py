@@ -15,15 +15,11 @@ import importlib
 from typing import List
 
 
-def obj(name: str, class_name: callable) -> str:
-
-    if name == "":
-        pass
-
+def obj(class_name: callable) -> callable:
     return callable
 
 
-def module(module_name: str) -> List[callable]:
+def module(module_name: str) -> callable:
 
     new = importlib.import_module(module_name)
 

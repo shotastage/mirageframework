@@ -16,7 +16,7 @@ import functools
 
 from typing import List
 from miragecore.core.types import *
-from console.flow import flows
+from console.flows import flows
 
 
 class CommandActionStore(object):
