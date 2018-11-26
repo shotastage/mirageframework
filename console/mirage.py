@@ -13,7 +13,6 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 import sys
 
 from console.mgargparse import CommandActionStore, ArgumentsParser
-from console.help.flow import VersionShowWorkFlow
 from console.appcollector import collect
 
 
@@ -22,9 +21,12 @@ def main():
     parser = ArgumentsParser()
 
     # Usage & Version
-    # parser.add_argument("h", "help", None, collect('UsageShow'))
-    parser.add_argument("v", None, None, None, collect('VersionShowWorkFlow'))
-    parser.add_argument("version", None, None, None, collect('VersionShowWorkFlow'))
+
+    # parser.add_argument("h", None, None, None, collect('UsageShowProcedure'))
+    # parser.add_argument("help", None, None, None, collect('UsageShowProcedure'))
+    #
+    parser.add_argument("v", None, None, None, collect('VersionShowProcedure'))
+    parser.add_argument("version", None, None, None, collect('VersionShowProcedure'))
 
 
     # Commands
@@ -48,7 +50,9 @@ def main():
 
     # parser.add_argument("d", "destroy", None, "DjangoDestroy")
 
-    # parser.add_argument("g", "generate", "app", "DjangoAppMake")
+    # parser.add_argument("g", "app", "DjangoAppMake")
+    # parser.add_argument("generate", "app", "DjangoAppMake")
+
 
     # parser.add_argument("g", "generate", "model", "DjangoModelMake")
 
