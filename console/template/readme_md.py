@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Copyright 2017-2018 Shota Shimazu.
 
@@ -15,8 +14,8 @@ Copyright 2017-2018 Shota Shimazu.
    limitations under the License.
 """
 
-import platform
 import sys
+import platform
 import textwrap
 
 from pip._internal import get_installed_distributions
@@ -84,7 +83,7 @@ def get_os_name():
 def get_pip_list():
     string = ""
 
-    ignore_packages = ["setuptools", "pip", "python", "mirage"]
+    ignore_packages = ["setuptools", "pip", "python", "mirage", "console"]
 
     packages = get_installed_distributions(local_only = True, skip = ignore_packages)
 

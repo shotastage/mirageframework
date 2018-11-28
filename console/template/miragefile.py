@@ -25,7 +25,7 @@ def src(proj_name, proj_ver, proj_author, author_email,
 
     return textwrap.dedent(
 '''
-from mirage import system as mys
+from miragecore.debug import logger
 from mirage.core import Void
 from mirage.confscript import ConfigScript
 from mirage.confscript.settings import Settings
@@ -69,7 +69,7 @@ class MirageConfig(ConfigScript):
 
 
     def initialize(self) -> Void:
-        mys.log("PINNA Setting Script V0.0.1")
+        logger.log("PINNA Setting Script V0.0.1")
 
 
     def main(self) -> int:
@@ -80,7 +80,7 @@ class MirageConfig(ConfigScript):
 
 
     def deinitialize(self) -> Void:
-        mys.log("Bye : )")
+        logger.log("Bye : )")
 
 ''').format(
     PROJECT_NAME        = proj_name,
