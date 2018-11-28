@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Copyright 2017-2018 Shota Shimazu.
 
@@ -20,14 +19,14 @@ import tempfile, sys, traceback
 from functools import lru_cache
 from urllib import request
 from console.proj import InDir
-from console.flow import Workflow
+from console.framework import Procedure
 from miragecore.core.types import *
 from console.version import __version__ as ver
 from console import system as mys
 
 
 
-class SystemCheckFlow(Workflow):
+class SystemCheckFlow(Procedure):
 
     def main(self) -> Void:
         mys.log("Checking system information...")

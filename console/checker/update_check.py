@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Copyright 2017-2018 Shota Shimazu.
 
@@ -18,17 +17,16 @@ Copyright 2017-2018 Shota Shimazu.
 import tempfile, sys, traceback
 from urllib import request
 from console.proj import InDir
-from console.flow import Workflow
+from console.framework import Procedure
 from console.core import Void
 from console.version import __version__ as ver
 from mirage import system as mys
 
 
 
-class UpdateCheckFlow(Workflow):
+class UpdateCheckFlow(Procedure):
 
-    def constructor(self) -> Void:
-        self._url = "https://raw.githubusercontent.com/shotastage/mirageframework/master/console/version.py"
+    URL = "https://raw.githubusercontent.com/shotastage/mirageframework/master/console/version.py"
 
 
     def main(self) -> Void:
@@ -37,7 +35,7 @@ class UpdateCheckFlow(Workflow):
         with tempfile.TemporaryDirectory() as td:
             with InDir(td):
                 sys.path.append(td)
-                request.urlretrieve(self._url, "mg_version_check.py")
+                request.urlretrieve(self.URL, "mg_version_check.py")
 
                 try:
                     import mg_version_check
