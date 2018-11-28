@@ -26,6 +26,7 @@ from console import system as mys
 
 
 
+
 class SystemCheckFlow(Procedure):
 
     def main(self) -> Void:
@@ -45,6 +46,8 @@ class SystemCheckFlow(Procedure):
             self.get_python_version()[2]
         )
 
+    def remaining_disk():
+        pass
 
     @lru_cache(maxsize = 100)
     def get_os(self) -> str:

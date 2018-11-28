@@ -21,25 +21,25 @@ import time
 import shlex
 import subprocess
 import webbrowser
-from mirage import proj
-from mirage.flow import Workflow
-from mirage import system as mys
+from console import proj
+from console.framework import Procedure
+from miragecore.debug import logger
 
 
-class DjangoDebugServerWorkFlow(Workflow):
+class DjangoDebugServerProcedure(Procedure):
     
     def main(self):        
         with proj.MirageEnvironment(proj.MirageEnvironmentLevel.indjango):
             try:
                 os.system("python manage.py runserver")
             except KeyboardInterrupt:
-                mys.log("Good bye!")
+                logger.log("Good bye!")
             except:
-                mys.log("Failed to launch web browser!", withError = True)
+                logger.log("Failed to launch web browser!", withError = True)
 
 
 
-class DjangoLaunchBrowserWorkflow(Workflow):
+class DjangoLaunchBrowserProcedure(Procedure):
 
     def constructor(self):
         self._url = self._option
