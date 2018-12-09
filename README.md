@@ -1,9 +1,9 @@
 ![MIRAGE Framework](./docs/assets/logo.png)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fshotastage%2Fmirageframework.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fshotastage%2Fmirageframework?ref=badge_shield)
 
 [![CircleCI](https://circleci.com/gh/shotastage/mirageframework.svg?style=svg)](https://circleci.com/gh/shotastage/mirageframework)
 [![Python 3](https://pyup.io/repos/github/shotastage/mirageframework/python-3-shield.svg)](https://pyup.io/repos/github/shotastage/mirageframework/)
 [![Updates](https://pyup.io/repos/github/shotastage/mirageframework/shield.svg)](https://pyup.io/repos/github/shotastage/mirageframework/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fshotastage%2Fmirageframework.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fshotastage%2Fmirageframework?ref=badge_shield)
 
 
 >> This software is now under construction.
