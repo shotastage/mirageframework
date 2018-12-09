@@ -12,6 +12,6 @@ Django based server side application framework for Python3.
 
 # License
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fshotastage%2Fmirageframework.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fshotastage%2Fmirageframework?ref=badge_large)
-
 This software is licensed under the Apache, see LICENSE for detail.
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fshotastage%2Fmirageframework.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fshotastage%2Fmirageframework?ref=badge_large)
