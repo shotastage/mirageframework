@@ -10,4 +10,4 @@ This software is released under the Apache License, see LICENSE for detail.
 https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
 
-__version__ = "0.1.8"
+__version__ = "0.1.9"
