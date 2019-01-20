@@ -32,4 +32,4 @@ rebuild:
 	pip install dist/mirage-framework-0.0.1.tar.gz
 
 export-requirements:
-	pipenv lock -r >> requirements.txt
+	pipenv lock -r > requirements.txt
