@@ -13,7 +13,8 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 import sys
 import inspect
 from typing import List
+from console.flows import flows
 
 
 def collect(module: str):
-    modules: List[str]
+    modules: List[str] = flows

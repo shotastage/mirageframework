@@ -12,7 +12,6 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 
 from miragecore import core
 from console.framework import Procedure
-from console.help import description, description_long
 from console import version
 
 # Data Sources
