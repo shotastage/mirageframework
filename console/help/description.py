@@ -1,25 +1,23 @@
-# -*- coding: utf-8 -*-
 """
-Copyright 2017-2018 Shota Shimazu.
+MIRAGE Console
+description.py
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+Created by Shota Shimazu on 2019/1/27
 
-       http://www.apache.org/licenses/LICENSE-2.0
+Copyright (c) 2018-2019 Shota Shimazu All Rights Reserved.
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+This software is released under the Apache License, see LICENSE for detail.
+https://github.com/shotastage/mirageframework/blob/master/LICENSE
 """
+
 
 from console import version
 
-def usage_doc():
+
+@property
+def usage_docstring() -> str:
     return """
-Mirage v{0}
+MIRAGE v{0}
 
 Usage:
     mg [action] option <--sub-option> <inputs>
@@ -91,12 +89,13 @@ v                                           Print version information.
 """.format(version.__version__)
 
 
-def version_doc():
+@property
+def version_docstring() -> str:
     return """
-Mirage Version {0}
+MIRAGE Version {0}
 
-https://github.com/shotastage/django-mirage
+https://github.com/shotastage/mirageframework
 
-Copyright (c) 2017-2018 Shota Shimazu
+Copyright (c) 2017-2019 Shota Shimazu
 This software is licensed under the Apache v2, see LICENSE for detail.
 """.format(version.__version__)
