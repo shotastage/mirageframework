@@ -15,11 +15,15 @@ from console.framework import Procedure
 from console.help import description, description_long
 from console import version
 
+# Data Sources
+from console.help.description import version_docstring, usage_docstring
+
 
 class UsageShowProcedure(Procedure):
 
     def procedure_running(self):
         super().procedure_running()
+        print(usage_docstring)
 
 
 
@@ -27,4 +31,4 @@ class VersionShowProcedure(Procedure):
 
     def procedure_running(self):
         super().procedure_running()
-        print(version.__version__)
+        print(version_docstring)
