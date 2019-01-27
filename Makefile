@@ -17,11 +17,6 @@ clean:
 	rm -rf mirage_framework.egg-info/
 	rm -rf dist/
 
-pyclean:
-	find ./console -name '*.pyc' -delete -not -path './mirage/scaffold/static/'
-	find ./mirageframework -name '*.pyc' -delete -not -path './mirage/scaffold/static/'
-
-
 rebuild:
 	@echo "Removing recent buildings..."
 	rm -rf dist/
