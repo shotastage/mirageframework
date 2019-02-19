@@ -12,9 +12,5 @@ https://github.com/shotastage/mirageframework/blob/master/LICENSE
 
 import sys
 
-
-input = sys.stdin.readline
-
-
 def initialize_list(d: list):
     return [None] * d
