@@ -1,6 +1,6 @@
 -i https://pypi.org/simple
 django==2.2
-djangorestframework==3.9.3
+djangorestframework==3.10.1
 pytz==2019.1
 sqlparse==0.3.0
 wheel==0.33.1
