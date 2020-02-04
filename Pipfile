@@ -1,18 +1,17 @@
 [[source]]
+name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-name = "pypi"
+
+[dev-packages]
+pylint = "*"
+pep8 = "*"
+twine = "*"
 
 [packages]
 wheel = "*"
 django = "*"
 djangorestframework = "*"
 
-[dev-packages]
-pylint = "*"
-"pep8" = "*"
-twine = "*"
-django-mirage = "*"
-
 [requires]
-python_version = "3.7"
+python_version = "3.8"
