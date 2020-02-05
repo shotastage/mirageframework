@@ -21,6 +21,6 @@ def obj(class_name: callable) -> callable:
 
 def module(module_name: str) -> callable:
 
-    new = importlib.import_module(module_name)
+    new = importlib.import_module(module_name, package=None)
 
-    return new.flow.flows
+    return new.flow

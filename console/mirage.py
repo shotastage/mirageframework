@@ -16,6 +16,7 @@ from console.mgargparse import CommandActionStore, ArgumentsParser
 from console.appcollector import collect
 
 
+
 def main():
 
     parser = ArgumentsParser()
