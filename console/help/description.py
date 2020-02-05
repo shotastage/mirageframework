@@ -4,7 +4,7 @@ description.py
 
 Created by Shota Shimazu on 2019/1/27
 
-Copyright (c) 2018-2019 Shota Shimazu All Rights Reserved.
+Copyright (c) 2018-2020 Shota Shimazu All Rights Reserved.
 
 This software is released under the Apache License, see LICENSE for detail.
 https://github.com/shotastage/mirageframework/blob/master/LICENSE
@@ -96,6 +96,6 @@ MIRAGE Version {0}
 
 https://github.com/shotastage/mirageframework
 
-Copyright (c) 2017-2019 Shota Shimazu
+Copyright (c) 2017-2020 Shota Shimazu
 This software is licensed under the Apache v2, see LICENSE for detail.
 """.format(version.__version__)
