@@ -7,9 +7,9 @@ verify_ssl = true
 pylint = "*"
 pep8 = "*"
 twine = "*"
+wheel = "*"
 
 [packages]
-wheel = "*"
 django = "*"
 djangorestframework = "*"
 
